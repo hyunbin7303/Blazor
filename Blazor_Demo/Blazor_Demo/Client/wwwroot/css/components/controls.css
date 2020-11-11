@@ -23,6 +23,8 @@
     position: relative;
     display: inline-block;
     border-bottom: 1px dotted black;
+    flex: 0 0 20px;
+    background: red;
 }
 
     .val-tooltip .val-tooltiptext {

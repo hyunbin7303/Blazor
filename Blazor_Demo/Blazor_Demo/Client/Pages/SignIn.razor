@@ -1,9 +1,16 @@
 ﻿@page "/signin"
+
+
 <div class="sign-form">
     <p class="welcome-text">Hello @(string.IsNullOrEmpty(Username)? "User": Username )  -  Today is @Day!</p>
-    <input type="text" class="sign-input form-control" placeholder="Username" @onchange="HandleUserNameChanged" />
-    <input type="password" class="sign-input form-control" placeholder="Password"/>
-    <button class="sign-button btn btn-primary" type="submit">Sign in</button>
+
+    <EditForm>
+
+        <input type="text" class="sign-input form-control" placeholder="Username" @bind-value="Username" />
+        @*<ValidationInput @bind-Value="@Username"></ValidationInput>*@
+        <input type="password" class="sign-input form-control" placeholder="Password" />
+        <button class="sign-button btn btn-primary" type="submit">Sign in</button>
+    </EditForm>
 
     <div class="signup">
         <a href="/signup">sign up bro</a>
@@ -12,11 +19,15 @@
 @code {
     private string Day { get; } = DateTime.Now.DayOfWeek.ToString();
 
-    private string Username { get; set; }
+    private string Username { get; set; } = "Test";
 
     private void HandleUserNameChanged(ChangeEventArgs eventArgs)
     {
         Username = eventArgs.Value.ToString();
+    }
+    private void HandleUserNameValueChanged(string value)
+    {
+        Username = value;
     }
 
 }
