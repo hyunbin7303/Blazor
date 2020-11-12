@@ -14,6 +14,9 @@ namespace Blazor_Demo.Client.Controls
         [Parameter]
         public string Value { get; set; }
 
+        [Parameter]
+        public string Error { get; set; }
+
 
         protected async void HandleInputChanged(ChangeEventArgs args)
         {

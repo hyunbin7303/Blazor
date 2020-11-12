@@ -1,14 +1,17 @@
 ﻿@page "/signin"
-
+@inherits SignInBase
 
 <div class="sign-form">
-    <p class="welcome-text">Hello @(string.IsNullOrEmpty(Username)? "User": Username )  -  Today is @Day!</p>
+    <p class="welcome-text">Hello @(string.IsNullOrEmpty(User.UserName)? "User": Username )  -  Today is @Day!</p>
 
-    <EditForm>
-
-        <input type="text" class="sign-input form-control" placeholder="Username" @bind-value="Username" />
-        @*<ValidationInput @bind-Value="@Username"></ValidationInput>*@
-        <input type="password" class="sign-input form-control" placeholder="Password" />
+    <EditForm EditContext="@EditContext">
+        <DataAnnotationsValidator />
+        @*<InputText type="text" class="sign-input form-control" placeholder="Username" @bind-Value="User.UserName" />
+        <ValidationMessage For="@(() => User.UserName)"></ValidationMessage>*@
+        <ValidationInput @bind-Value="@User.UserName" Error="@GetError(()=> User.UserName)"></ValidationInput>
+        @*<InputText type="password" class="sign-input form-control" placeholder="Password" @bind-Value="User.Password" />
+        <ValidationMessage For="@(() => User.Password)"></ValidationMessage>*@
+        <ValidationInput type="password" @bind-Value="@User.Password" Error="@GetError(()=> User.Password)"></ValidationInput>
         <button class="sign-button btn btn-primary" type="submit">Sign in</button>
     </EditForm>
 
@@ -16,21 +19,5 @@
         <a href="/signup">sign up bro</a>
     </div>
 </div>
-@code {
-    private string Day { get; } = DateTime.Now.DayOfWeek.ToString();
-
-    private string Username { get; set; } = "Test";
-
-    private void HandleUserNameChanged(ChangeEventArgs eventArgs)
-    {
-        Username = eventArgs.Value.ToString();
-    }
-    private void HandleUserNameValueChanged(string value)
-    {
-        Username = value;
-    }
-
-}
-
 
 
