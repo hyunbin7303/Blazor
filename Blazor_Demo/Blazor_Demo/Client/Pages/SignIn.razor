@@ -8,10 +8,20 @@
         <DataAnnotationsValidator />
         @*<InputText type="text" class="sign-input form-control" placeholder="Username" @bind-Value="User.UserName" />
         <ValidationMessage For="@(() => User.UserName)"></ValidationMessage>*@
-        <ValidationInput @bind-Value="@User.UserName" Error="@GetError(()=> User.UserName)"></ValidationInput>
+
+        <div class="sign-validation">
+            <ValidationInput 
+                             placeholder="Username"
+                             @bind-Value="@User.UserName"
+                             Error="@GetError(()=> User.UserName)"></ValidationInput>
+        </div>
         @*<InputText type="password" class="sign-input form-control" placeholder="Password" @bind-Value="User.Password" />
         <ValidationMessage For="@(() => User.Password)"></ValidationMessage>*@
-        <ValidationInput type="password" @bind-Value="@User.Password" Error="@GetError(()=> User.Password)"></ValidationInput>
+
+        <div class="sign-validation">
+            <ValidationInput  type="password" placeholder="Password" @bind-Value="@User.Password" Error="@GetError(()=> User.Password)"></ValidationInput>
+
+        </div>
         <button class="sign-button btn btn-primary" type="submit">Sign in</button>
     </EditForm>
 

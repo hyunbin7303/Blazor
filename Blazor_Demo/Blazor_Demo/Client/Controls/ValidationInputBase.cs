@@ -17,6 +17,10 @@ namespace Blazor_Demo.Client.Controls
         [Parameter]
         public string Error { get; set; }
 
+        [Parameter(CaptureUnmatchedValues =true)] // allow the parameter to match all attributes that don't match any other parameter here and other components.
+        public Dictionary<string,object> InputAttributes { get; set; }
+
+
 
         protected async void HandleInputChanged(ChangeEventArgs args)
         {
