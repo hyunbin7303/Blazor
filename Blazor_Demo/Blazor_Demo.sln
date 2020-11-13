@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor_Demo.Client", "Blazo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor_Demo.Shared", "Blazor_Demo\Shared\Blazor_Demo.Shared.csproj", "{40E29DE8-E384-49FE-A841-292E72513372}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor_Demo.DataAccess", "Blazor_Demo.DataAccess\Blazor_Demo.DataAccess.csproj", "{B07A0320-A99E-4E19-88D4-59AD857F2A6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor_Demo.DataAccess", "Blazor_Demo.DataAccess\Blazor_Demo.DataAccess.csproj", "{B07A0320-A99E-4E19-88D4-59AD857F2A6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor_Demo.Business", "Blazor_Demo.Business\Blazor_Demo.Business.csproj", "{026FBB95-A1F5-4CB2-9018-BF6A059660D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor_Demo.Business", "Blazor_Demo.Business\Blazor_Demo.Business.csproj", "{026FBB95-A1F5-4CB2-9018-BF6A059660D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneralUI", "GeneralUI\GeneralUI.csproj", "{69F1B730-E4CD-4AAB-ADFF-726BF5FED6C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{026FBB95-A1F5-4CB2-9018-BF6A059660D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{026FBB95-A1F5-4CB2-9018-BF6A059660D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{026FBB95-A1F5-4CB2-9018-BF6A059660D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69F1B730-E4CD-4AAB-ADFF-726BF5FED6C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69F1B730-E4CD-4AAB-ADFF-726BF5FED6C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69F1B730-E4CD-4AAB-ADFF-726BF5FED6C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69F1B730-E4CD-4AAB-ADFF-726BF5FED6C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
