@@ -3,13 +3,13 @@
 <div class="sign-form">
     @*<p class="welcome-text">Hello @(string.IsNullOrEmpty(User.UserName)? "User": Username )  -  Today is @Day!</p>*@
 
-    <EditForm EditContext="@EditContext">
+    <EditForm EditContext="@EditContext" OnSubmit="OnSubmit" >
         <DataAnnotationsValidator />
         @*<InputText type="text" class="sign-input form-control" placeholder="Username" @bind-Value="User.UserName" />
         <ValidationMessage For="@(() => User.UserName)"></ValidationMessage>*@
 
         <div class="sign-validation">
-            <ValidationInput 
+            <ValidationInput  
                              placeholder="Username"
                              @bind-Value="@User.UserName"
                              Error="@GetError(()=> User.UserName)"></ValidationInput>
@@ -25,7 +25,8 @@
     </EditForm>
 
     <div class="signup">
-        <a href="/signup">sign up bro</a>
+        @*<a href="@(User.UserName != null ? "/signup?username=" + User.UserName : "/signup")">sign up bro</a>*@
+        <a href="@(User.UserName != null ? "/signup/" + User.UserName : "/signup")">sign up bro</a>
     </div>
 </div>
 

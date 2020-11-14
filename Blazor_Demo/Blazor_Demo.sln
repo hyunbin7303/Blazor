@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor_Demo.DataAccess", "B
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor_Demo.Business", "Blazor_Demo.Business\Blazor_Demo.Business.csproj", "{026FBB95-A1F5-4CB2-9018-BF6A059660D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneralUI", "GeneralUI\GeneralUI.csproj", "{69F1B730-E4CD-4AAB-ADFF-726BF5FED6C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeneralUI", "GeneralUI\GeneralUI.csproj", "{69F1B730-E4CD-4AAB-ADFF-726BF5FED6C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

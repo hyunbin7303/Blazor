@@ -1,9 +1,10 @@
 ﻿
 @page "/signup"
+
 @inherits SignUpBase
 
 <div class="sign-form">
-    <EditForm EditContext="@EditContext">
+    <EditForm EditContext="@EditContext" OnInvalidSubmit="OnValidSubmit">
         <DataAnnotationsValidator />
         <div class="sign-validation">
             <ValidationInput @bind-Value="User.UserName"
@@ -34,7 +35,16 @@
                              placeholder="Phone Number"
                              Error=@GetError(()=> User.PhoneNumber) />
         </div>
-    
+
+        <div class="sign-validation">
+            <Dropdown TValue="Blazor_Demo.Shared.Enums.GenderTypeEnum"
+                      @bind-SelectedItem="@SelectedGenderTypeDropdownItem"
+                      SelectableItems="@GenderTypeDropdownItems">
+
+            </Dropdown>
+
+        </div>
+
         <button class="sign-button btn btn-primary" type="submit">Sign UP</button>
     </EditForm>
 
