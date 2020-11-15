@@ -1,4 +1,4 @@
-﻿using Blazor_Demo.Business;
+﻿using Blazor_Demo.Shared.Contracts;
 using Blazor_Demo.Shared.Entities;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
@@ -16,6 +16,21 @@ namespace Blazor_Demo.Client.Pages
 
         [Inject]
         private NavigationManager NavigationManager { get; set; }
+        [Inject]
+        private IUserManager UserManager { get; set; }
+
+        protected override void OnInitialized()
+        {
+            base.OnInitialized();
+            User = new User
+            {
+                FirstName = "X",
+                LastName = "X",
+                PhoneNumber = "123"
+            };
+
+            EditContext = new EditContext(User);
+        }
 
 
         protected async void OnSubmit()
@@ -24,8 +39,8 @@ namespace Blazor_Demo.Client.Pages
             {
                 return;
             }
-            UserManager userManager = new UserManager();
-            var userExist = await userManager.TrySignInAndGetUserAsync(User);
+            Console.WriteLine($"Signin User :{User.UserName}, {User.FirstName}");
+            var userExist = await UserManager.TrySignInAndGetUserAsync(User);
             if(userExist != null)
             {
                 NavigationManager.NavigateTo("items");

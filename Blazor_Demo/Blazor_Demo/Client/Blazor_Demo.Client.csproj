@@ -17,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Blazor_Demo.Business\Blazor_Demo.Business.csproj" />
     <ProjectReference Include="..\..\Blazor_Demo.DataAccess\Blazor_Demo.DataAccess.csproj" />
+    <ProjectReference Include="..\..\Blazor_Demo.TestFake\Blazor_Demo.TestFake.csproj" />
     <ProjectReference Include="..\..\GeneralUI\GeneralUI.csproj" />
     <ProjectReference Include="..\Shared\Blazor_Demo.Shared.csproj" />
   </ItemGroup>
