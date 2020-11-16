@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace Blazor_Demo.Shared.Entities
 {
-    public class User
+    public class User : BaseEntity
     {
         [Required]
         [StringLength(10, ErrorMessage ="User name is too long. Only allow 10 characters.")]
@@ -16,5 +17,6 @@ namespace Blazor_Demo.Shared.Entities
         [Required]
         [Phone]
         public string PhoneNumber { get; set; }
+        public ObservableCollection<BaseItem> UserItems { get; set;  }
     }
 }

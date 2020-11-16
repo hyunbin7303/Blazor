@@ -16,6 +16,7 @@ namespace Blazor_Demo.TestFake
 
         public Task<User> TrySignInAndGetUserAsync(User user)
         {
+            Console.WriteLine("FAKE USER");
             return Task.FromResult(new User());
         }
     }
