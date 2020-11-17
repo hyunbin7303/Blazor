@@ -24,10 +24,17 @@ namespace Blazor_Demo.Client
 
 
             //builder.Services.AddSingleton<IUserManager, UserManager>(); //DI
-            builder.Services.AddSingleton<IUserManager, UserManagerFake>(); //DI
+            builder.Services.AddScoped<IUserManager, UserManagerFake>(); //DI
+            builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
 
+            var host = builder.Build();
+            var curUserService = host.Services.GetRequiredService<ICurrentUserService>();
+            TestData.CreateTestUser();
+            curUserService.CurrentUser = TestData.Tuser;
 
-            await builder.Build().RunAsync();
+            await host.RunAsync();
+            
+            //await builder.Build().RunAsync();
         }
     }
 }

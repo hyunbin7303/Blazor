@@ -4,7 +4,8 @@ using System.Text;
 
 namespace Blazor_Demo.Shared.Entities
 {
-    public class ChildItem : BaseEntity
+    public class ChildItem : BaseItem
     {
+
     }
 }
