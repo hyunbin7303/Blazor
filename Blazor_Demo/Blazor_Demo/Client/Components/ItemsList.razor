@@ -3,6 +3,8 @@
     @foreach (var item in UserItems)
     {
         <div>@item.Title</div>
+        <ItemElement Titem="Blazor_Demo.Shared.Entities.BaseItem" Item="@item"></ItemElement>
+        
     }
 
 
