@@ -41,6 +41,17 @@ namespace Blazor_Demo.TestFake
             urlItem.ItemTypeEnum = ItemTypeEnum.Url;
             urlItem.Position = 2;
 
+            var urlItem2 = new UrlItem();
+            urlItem2.ParentId = urlItem2.Id;
+            user.UserItems.Add(urlItem2);
+            urlItem2.Id = 2;
+            urlItem2.Title = "Checking 2aaaaaa";
+            urlItem2.Url = "www.google.com";
+            urlItem2.ItemTypeEnum = ItemTypeEnum.Url;
+            urlItem2.Position = 2;
+
+
+
             var parentItem = new ParentItem();
             parentItem.ParentId = user.Id;
             user.UserItems.Add(parentItem);
@@ -56,6 +67,14 @@ namespace Blazor_Demo.TestFake
             childItem.Id = 4;
             childItem.Position = 1;
             childItem.Title = "Cut";
+
+
+            var childItem2 = new ChildItem();
+            childItem2.ParentId = parentItem.Id;
+            parentItem.ChildItems.Add(childItem2);
+            childItem2.Id = 5;
+            childItem2.Position = 1;
+            childItem2.Title = "Cut";
 
             Tuser = user;
 
