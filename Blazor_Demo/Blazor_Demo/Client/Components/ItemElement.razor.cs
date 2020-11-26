@@ -19,6 +19,10 @@ namespace Blazor_Demo.Client.Components
 
         [Parameter]
         public Titem Item { get; set; }
+        
+
+        [CascadingParameter]
+        public string ColorPrefix { get; set; }
     
         private string DetailAreaId { get; set; }
         protected override void OnParametersSet()

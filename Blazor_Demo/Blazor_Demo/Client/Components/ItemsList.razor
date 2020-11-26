@@ -6,21 +6,22 @@
         switch (item)
         {
             case TextItem textItem:
-                <div>@item.Title</div>
-                <ItemElement Titem="Blazor_Demo.Shared.Entities.BaseItem" Item="@item">
-                    <MainFragment>
-                        <div class="item-main-container">
-                            <div class="content-text-top">@textItem.Title</div>
-                            <div class="content-text-bottom">@textItem.SubTitle</div>
-                        </div>
-                    </MainFragment>
-                    <DetailFragment>
-                        <div class="detail-text">@textItem.Detail</div>
+    <CascadingValue Value="@("primary")">
+        <div>@item.Title</div>
+        <ItemElement Titem="Blazor_Demo.Shared.Entities.BaseItem" Item="@item">
+            <MainFragment>
+                <div class="item-main-container">
+                    <div class="content-text-top">@textItem.Title</div>
+                    <div class="content-text-bottom">@textItem.SubTitle</div>
+                </div>
+            </MainFragment>
+            <DetailFragment>
+                <div class="detail-text">@textItem.Detail</div>
 
 
-                    </DetailFragment>
-                </ItemElement>
-
+            </DetailFragment>
+        </ItemElement>
+    </CascadingValue>
                 break;
 
             case UrlItem urlItem:
