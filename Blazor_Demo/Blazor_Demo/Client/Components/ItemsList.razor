@@ -6,75 +6,80 @@
         switch (item)
         {
             case TextItem textItem:
-    <CascadingValue Value="@("primary")">
-        <div>@item.Title</div>
-        <ItemElement Titem="Blazor_Demo.Shared.Entities.BaseItem" Item="@item">
-            <MainFragment>
-                <div class="item-main-container">
-                    <div class="content-text-top">@textItem.Title</div>
-                    <div class="content-text-bottom">@textItem.SubTitle</div>
-                </div>
-            </MainFragment>
-            <DetailFragment>
-                <div class="detail-text">@textItem.Detail</div>
+                <CascadingValue Value="@("primary")">
+                    <div>@item.Title</div>
+                    <ItemElement Titem="Blazor_Demo.Shared.Entities.BaseItem" Item="@item">
+                        <MainFragment>
+                            <div class="item-main-container">
+                                <div class="content-text-top">@textItem.Title</div>
+                                <div class="content-text-bottom">@textItem.SubTitle</div>
+                            </div>
+                        </MainFragment>
+                        <DetailFragment>
+                            <div class="detail-text">@textItem.Detail</div>
 
 
-            </DetailFragment>
-        </ItemElement>
-    </CascadingValue>
+                        </DetailFragment>
+                    </ItemElement>
+                </CascadingValue>
                 break;
 
             case UrlItem urlItem:
-                <div>@item.Title</div>
-                <ItemElement Titem="Blazor_Demo.Shared.Entities.BaseItem" Item="@item">
-                    <MainFragment>
-                        <div class="item-main-container">
-                            <div class="content-text-top">@urlItem.Title</div>
-                            <div class="content-text-bottom" href="@urlItem.Url" target="_blank">@urlItem.Url</div>
-                        </div>
-                    </MainFragment>
-                    <DetailFragment>
-                        <img class="detail-image" src="@urlItem.Url" /> 
 
-                    </DetailFragment>
-                </ItemElement>
+                <CascadingValue Value="@("secondary")">
+                    <div>@item.Title</div>
+                    <ItemElement Titem="Blazor_Demo.Shared.Entities.BaseItem" Item="@item">
+                        <MainFragment>
+                            <div class="item-main-container">
+                                <div class="content-text-top">@urlItem.Title</div>
+                                <div class="content-text-bottom" href="@urlItem.Url" target="_blank">@urlItem.Url</div>
+                            </div>
+                        </MainFragment>
+                        <DetailFragment>
+                            <img class="detail-image" src="@urlItem.Url" />
 
+                        </DetailFragment>
+                    </ItemElement>
+                </CascadingValue>
                 break;
 
             case ParentItem parentItem:
-                <div>@item.Title</div>
-                <ItemElement Titem="Blazor_Demo.Shared.Entities.BaseItem" Item="@item">
-                    <MainFragment>
-                        <div class="item-main-container">
-                            <div class="content-text-top">@parentItem.Title</div>
-                            <div class="content-text-bottom">@parentItem.ChildItems.Count</div>
-                            <div class="content-text-bottom">Done @parentItem.ChildItems.Count(i=> i.IsDone)</div>
-                        </div>
-                    </MainFragment>
-                    <DetailFragment>
-                          
-                        @foreach(var ci in parentItem.ChildItems)
-                        {
-                            <div class="extended-child">
-                                <div class="check-container">
-                                    <div class="checkbox tertiary-border-color" style="border: 1px solid">
-                                        <ItemCheckBox Item="@ci"></ItemCheckBox>
 
-                                    </div>
-                                </div>
-
-                                <div class="content-container">
-                                    <p class="child-title">@ci.Title</p>
-                                </div>
-
+                <CascadingValue Value="@("tertiary")">
+                    <div>@item.Title</div>
+                    <ItemElement Titem="Blazor_Demo.Shared.Entities.BaseItem" Item="@item">
+                        <MainFragment>
+                            <div class="item-main-container">
+                                <div class="content-text-top">@parentItem.Title</div>
+                                <div class="content-text-bottom">@parentItem.ChildItems.Count</div>
+                                <div class="content-text-bottom">Done @parentItem.ChildItems.Count(i => i.IsDone)</div>
                             </div>
+                        </MainFragment>
+                        <DetailFragment>
 
-                        }
+                            @foreach (var ci in parentItem.ChildItems)
+                            {
+                                <div class="extended-child">
+                                    <div class="check-container">
+                                        <div class="checkbox tertiary-border-color" style="border: 1px solid">
+                                            <ItemCheckBox Item="@ci"></ItemCheckBox>
 
-                    </DetailFragment>
+                                        </div>
+                                    </div>
+
+                                    <div class="content-container">
+                                        <p class="child-title">@ci.Title</p>
+                                    </div>
+
+                                </div>
+
+                            }
+
+                        </DetailFragment>
 
 
-                </ItemElement>
+                    </ItemElement>
+                </CascadingValue>
                 break;
         }
 
