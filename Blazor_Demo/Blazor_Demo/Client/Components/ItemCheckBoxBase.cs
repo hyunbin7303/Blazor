@@ -11,5 +11,9 @@ namespace Blazor_Demo.Client.Components
     {
         [Parameter]
         public BaseItem Item { get; set; }
+
+
+        [CascadingParameter]
+        public string ColorPrefix { get; set; }
     }
 }

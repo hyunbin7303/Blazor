@@ -23,6 +23,10 @@ namespace Blazor_Demo.Client.Components
 
         [CascadingParameter]
         public string ColorPrefix { get; set; }
+
+
+        [CascadingParameter]
+        public int TotalNumber { get; set; }
     
         private string DetailAreaId { get; set; }
         protected override void OnParametersSet()
