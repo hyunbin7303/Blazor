@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using Blazor_Demo.Business;
 using Blazor_Demo.Shared.Contracts;
 using Blazor_Demo.TestFake;
+using Blazor_Demo.Client.ItemEdit;
 
 namespace Blazor_Demo.Client
 {
@@ -26,6 +27,7 @@ namespace Blazor_Demo.Client
             //builder.Services.AddSingleton<IUserManager, UserManager>(); //DI
             builder.Services.AddScoped<IUserManager, UserManagerFake>(); //DI
             builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
+            builder.Services.AddScoped<ItemEditService>();
 
             var host = builder.Build();
             var curUserService = host.Services.GetRequiredService<ICurrentUserService>();

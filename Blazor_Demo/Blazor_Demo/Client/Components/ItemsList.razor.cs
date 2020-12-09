@@ -1,4 +1,5 @@
-﻿using Blazor_Demo.Shared.Contracts;
+﻿using Blazor_Demo.Client.ItemEdit;
+using Blazor_Demo.Shared.Contracts;
 using Blazor_Demo.Shared.Entities;
 using Microsoft.AspNetCore.Components;
 using System.Collections.ObjectModel;
@@ -10,6 +11,10 @@ namespace Blazor_Demo.Client.Components
     {
         [Inject]
         private ICurrentUserService CurrentUserService { get; set; }
+
+        [Inject]
+        private ItemEditService ItemEditService { get; set; }
+
         protected ObservableCollection<BaseItem> UserItems { get; set; } = new ObservableCollection<BaseItem>();
 
         protected override void OnInitialized()
@@ -19,5 +24,11 @@ namespace Blazor_Demo.Client.Components
             System.Console.WriteLine(UserItems.Count);
             System.Console.WriteLine(JsonSerializer.Serialize(UserItems));
         }
+
+        private void OnBackgroundClicked()
+        {
+            ItemEditService.EditItem = null;
+        }
+
     }
 }

@@ -1,5 +1,17 @@
 ﻿@page "/items"
  
+<div class="items-container">
+    <div class="items-list-container">
+        <ItemsList></ItemsList>
+    </div>
 
 
-<ItemsList></ItemsList>
+
+    @if (ShowEdit)
+    {
+        <div class="item-edit-container">
+            <ItemEdit></ItemEdit>
+        </div>
+    }
+
+</div>

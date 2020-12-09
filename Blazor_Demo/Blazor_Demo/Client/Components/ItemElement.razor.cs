@@ -1,4 +1,5 @@
-﻿using Blazor_Demo.Shared.Entities;
+﻿using Blazor_Demo.Client.ItemEdit;
+using Blazor_Demo.Shared.Entities;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,10 @@ namespace Blazor_Demo.Client.Components
 
         [CascadingParameter]
         public int TotalNumber { get; set; }
+
+
+        [Inject]
+        private ItemEditService ItemEditService { get; set; }
     
         private string DetailAreaId { get; set; }
         protected override void OnParametersSet()
@@ -34,5 +39,12 @@ namespace Blazor_Demo.Client.Components
             base.OnParametersSet();
             DetailAreaId = "detailArea" + Item.Position;
         }
+
+        private void OpenItemInEditMode()
+        {
+            ItemEditService.EditItem = Item;
+        }
+
+
     }
 }
