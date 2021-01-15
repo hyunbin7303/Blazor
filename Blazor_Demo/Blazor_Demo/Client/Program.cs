@@ -26,6 +26,8 @@ namespace Blazor_Demo.Client
 
             //builder.Services.AddSingleton<IUserManager, UserManager>(); //DI
             builder.Services.AddScoped<IUserManager, UserManagerFake>(); //DI
+            builder.Services.AddScoped<IUserItemManager, UserItemManager>(); //DI
+
             builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
             builder.Services.AddScoped<ItemEditService>();
 

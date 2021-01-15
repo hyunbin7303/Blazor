@@ -31,7 +31,9 @@ namespace Blazor_Demo.Client.Components
 
 
         [Inject]
-        private ItemEditService ItemEditService { get; set; }
+        private NavigationManager NavigationManager { get; set; }
+
+
     
         private string DetailAreaId { get; set; }
         protected override void OnParametersSet()
@@ -42,7 +44,8 @@ namespace Blazor_Demo.Client.Components
 
         private void OpenItemInEditMode()
         {
-            ItemEditService.EditItem = Item;
+            Uri.TryCreate("/items/" + Item.ItemTypeEnum + "/" + + Item.Id, UriKind.Relative, out var uri);
+            NavigationManager.NavigateTo(uri.ToString());
         }
 
 
