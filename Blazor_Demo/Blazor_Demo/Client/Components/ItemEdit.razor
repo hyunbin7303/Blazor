@@ -1,12 +1,10 @@
 ﻿<div class="item-edit-info">
     <div class="item-edit-info-text"> Type: @Item.ItemTypeEnum.ToString()</div>
-    <div class="item-edit-info-count"> @Item.Position/@TotalNumber></div>
+    <div class="item-edit-info-count"> @Item.Position/@TotalNumber</div>
 </div>
 
 
 <label for="title">Title</label>
-<input id="title" type="text" class="item-edit-input" @bind-value="@Item.Title" />
-<input id="title" type="text" class="item-edit-input" @bind-value="@Item.Title" />
 <input id="title" type="text" class="item-edit-input" @bind-value="@Item.Title" />
 
 @switch (Item)
@@ -14,7 +12,8 @@
 
     case TextItem textItem:
         <label for="subtitle">Subtitle</label>
-        <input id="subtitle" class="item-edit-input" @bind-value="@textItem.SubTitle" @bind-value:event="oninput" />
+        <input id="subtitle" class="item-edit-input" 
+                  @bind-value="@textItem.SubTitle" @bind-value:event="oninput" />
 
         <label for="details">Details</label>
         <textarea id="details" type="text" class="item-edit-input"

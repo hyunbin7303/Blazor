@@ -14,7 +14,7 @@ namespace Blazor_Demo.Client.Components
 {
     public partial class ItemEdit : ComponentBase, IDisposable
     {
-        
+
         //[Inject]
         //private ItemEditService ItemEditService { get; set; }
         [Inject]
@@ -51,8 +51,9 @@ namespace Blazor_Demo.Client.Components
                 }   
                 else
                 {
+                    Item = userItem;
                     NavigationManager.LocationChanged += HandleLocationChanged;
-                    //StateHasChanged();
+                    StateHasChanged();
                 }
 
             }

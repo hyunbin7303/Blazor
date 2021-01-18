@@ -6,6 +6,16 @@ html, body {
   padding-top: 54px;
   height: 100%; }
 
+.navbar {
+  background: #00B0F0;
+  color: white; }
+
+.navbar-brand {
+  color: white; }
+
+.navbar-light .navbar-brand {
+  color: white; }
+
 .primary-background {
   background: #00B0F0; }
 
@@ -23,16 +33,6 @@ html, body {
 
 .teritary-border-color {
   border-color: #8A00C0; }
-
-.navbar {
-  background: #00B0F0;
-  color: white; }
-
-.navbar-brand {
-  color: white; }
-
-.navbar-light .navbar-brand {
-  color: white; }
 
 .active-nav > button {
   background: green; }

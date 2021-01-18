@@ -6,6 +6,5 @@ namespace Blazor_Demo.Shared.Entities
 {
     public class ChildItem : BaseItem
     {
-
     }
 }
